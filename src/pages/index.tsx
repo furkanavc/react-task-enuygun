@@ -1,12 +1,12 @@
-import { Inter } from "next/font/google";
-import { Card } from "@/components/Card";
+import { Inter } from 'next/font/google'
+import { Card } from '@/components/Card'
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
   return (
     <>
-      <Card />
+      <Card onMinusClick={console.log} onPlusClick={console.log} />
     </>
-  );
+  )
 }

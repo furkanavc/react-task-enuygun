@@ -8,7 +8,9 @@ import { apiGraphqlRequest } from '@/helpers/request'
 type HomeProps = { data: { PersonAll: Person[] } }
 type PartialPerson = Pick<Person, 'id' | 'voteCount'>
 const updatePersonState = (partialPerson: PartialPerson) => (personList: Person[]) =>
-  personList.map((p) => (partialPerson.id === p.id ? { ...p, ...partialPerson } : p))
+  personList
+    .map((p) => (partialPerson.id === p.id ? { ...p, ...partialPerson } : p))
+    .sort((a, b) => b.voteCount - a.voteCount)
 
 export default function Home({ data }: HomeProps) {
   const [personList, setPersonList] = useState(data.PersonAll)

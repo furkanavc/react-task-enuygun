@@ -41,7 +41,7 @@ export default function Home({ data }: HomeProps) {
   ))
 }
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
   const res = await apiGraphqlRequest<HomeProps['data']>(allPerson)
   return { props: { data: res.data ?? { PersonAll: [] } } }
 }

@@ -7,8 +7,8 @@
     "dev-apollo": "npm-run-all --parallel start-apollo-server dev",
     "start-apollo-server": "rm -rf ./src/graphql/server.js && tsc ./src/graphql/server.ts && node ./src/graphql/server.js",
     "build": "next build",
-    "start": "next start",
-    "start-apollo": "npm-run-all --parallel start-apollo-server start",
+    "start-default": "next start",
+    "start": "npm-run-all --parallel start-apollo-server start-default",
     "lint": "next lint"
   },
   "dependencies": {

@@ -10,9 +10,9 @@ type CardProps = {
 }
 export const Card = ({ person, onMinusClick, onPlusClick }: CardProps) => {
   return (
-    <Link href={['detay', person?.id || ''].join('/')}>
-      <div
-        className={'relative flex h-96 w-full max-w-xs flex-col overflow-hidden rounded-md border'}>
+    <div
+      className={'relative flex h-96 w-full max-w-xs flex-col overflow-hidden rounded-md border'}>
+      <Link href={['detay', person?.id || ''].join('/')}>
         <div className="relative h-full w-full">
           <Image
             fill
@@ -21,21 +21,21 @@ export const Card = ({ person, onMinusClick, onPlusClick }: CardProps) => {
             src={person?.image ?? 'https://picsum.photos/200/300'}
           />
         </div>
-        <div>{person?.fullName}</div>
-        <div>{person?.voteCount}</div>
-        <div className="flex h-12 items-center justify-around bg-black">
-          <span
-            onClick={onMinusClick}
-            className="flex size-10 items-center justify-center rounded-md bg-slate-400 text-lg hover:bg-slate-300">
-            -
-          </span>
-          <span
-            onClick={onPlusClick}
-            className="flex size-10 items-center justify-center rounded-md bg-slate-400 text-lg hover:bg-slate-300">
-            +
-          </span>
-        </div>
+      </Link>
+      <div>{person?.fullName}</div>
+      <div>{person?.voteCount}</div>
+      <div className="flex h-12 items-center justify-around bg-black">
+        <span
+          onClick={onMinusClick}
+          className="flex size-10 items-center justify-center rounded-md bg-slate-400 text-lg hover:bg-slate-300">
+          -
+        </span>
+        <span
+          onClick={onPlusClick}
+          className="flex size-10 items-center justify-center rounded-md bg-slate-400 text-lg hover:bg-slate-300">
+          +
+        </span>
       </div>
-    </Link>
+    </div>
   )
 }

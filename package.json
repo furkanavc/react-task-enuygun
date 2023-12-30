@@ -4,15 +4,15 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "dev-apollo": "npm-run-all --parallel start-apollo-server dev",
-    "start-apollo-server": "rm -rf ./src/graphql/server.js && tsc ./src/graphql/server.ts && node ./src/graphql/server.js",
     "build": "next build",
-    "start-default": "next start",
-    "start": "npm-run-all --parallel start-apollo-server start-default",
-    "lint": "next lint"
+    "start": "next start",
+    "lint": "next lint",
+    "dev-apollo": "npm-run-all --parallel start-apollo-server dev",
+    "start-apollo": "npm-run-all --parallel start-apollo-server start",
+    "start-apollo-server": "node ./src/graphql/index.js"
   },
   "dependencies": {
-    "@apollo/server": "^4.9.5",
+    "apollo-server-express": "^3.13.0",
     "graphql": "^16.8.1",
     "next": "14.0.4",
     "npm-run-all": "^4.1.5",

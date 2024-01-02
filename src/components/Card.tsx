@@ -20,10 +20,10 @@ export const Card = ({ person, onMinusClick, onPlusClick }: CardProps) => {
         />
       </div>
       <div className="p-5">
-        <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+        <h5 className="mb-2 line-clamp-1 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
           {person?.fullName}
         </h5>
-        <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
+        <p className="mb-3 line-clamp-1 font-normal text-gray-700 dark:text-gray-400">
           Vote Count:{person?.voteCount}
         </p>
         <Link

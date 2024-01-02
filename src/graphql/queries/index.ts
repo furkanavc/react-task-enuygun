@@ -4,6 +4,7 @@ export const allPerson = () => `
     id
     email
     fullName
+    jobTitle
     image
     voteCount
   }
@@ -16,6 +17,7 @@ export const getPerson = (id: string) => `
     id
     email
     fullName
+    jobTitle
     image
     voteCount
   }

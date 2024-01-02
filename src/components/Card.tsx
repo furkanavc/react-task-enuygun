@@ -32,14 +32,10 @@ export const Card = ({ person, onMinusClick, onPlusClick }: CardProps) => {
           Detail
         </Link>
         <div className="flex h-12 items-center space-x-1">
-          <button
-            onClick={onMinusClick}
-            className="flex size-10 items-center justify-center rounded-md bg-slate-400 text-lg hover:bg-slate-300">
+          <button onClick={onMinusClick} className="custom-button-vote">
             -
           </button>
-          <button
-            onClick={onPlusClick}
-            className="flex size-10 items-center justify-center rounded-md bg-slate-400 text-lg hover:bg-slate-300">
+          <button onClick={onPlusClick} className="custom-button-vote">
             +
           </button>
         </div>

@@ -25,3 +25,10 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+.custom-button-vote {
+  @apply flex size-10 items-center justify-center rounded-md bg-slate-400 text-lg hover:bg-slate-300
+}
+.custom-button {
+  @apply flex w-48 items-center justify-center rounded-md bg-slate-400 text-lg hover:bg-slate-300
+}

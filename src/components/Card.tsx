@@ -31,7 +31,7 @@ export const Card = ({ person, onMinusClick, onPlusClick }: CardProps) => {
           className="inline-flex items-center rounded-lg bg-blue-700 px-3 py-2 text-center text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300  ">
           Detail
         </Link>
-        <div className="flex h-12 items-center space-x-2">
+        <div className="flex h-12 items-center space-x-1">
           <button
             onClick={onMinusClick}
             className="flex size-10 items-center justify-center rounded-md bg-slate-400 text-lg hover:bg-slate-300">

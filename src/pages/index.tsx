@@ -32,14 +32,20 @@ export default function Home({ data }: HomeProps) {
     []
   )
 
-  return personList.map((person: Person, i) => (
-    <Card
-      key={person.id}
-      person={person}
-      onPlusClick={onPlusClick(person)}
-      onMinusClick={onMinusClick(person)}
-    />
-  ))
+  return (
+    <div className="container mx-auto px-5">
+      <div className="grid grid-cols-1 gap-5 sm:grid-cols-3 lg:grid-cols-5">
+        {personList.map((person: Person, i) => (
+          <Card
+            key={person.id}
+            person={person}
+            onPlusClick={onPlusClick(person)}
+            onMinusClick={onMinusClick(person)}
+          />
+        ))}
+      </div>
+    </div>
+  )
 }
 
 export const getServerSideProps = async () => {

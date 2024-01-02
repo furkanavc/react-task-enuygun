@@ -10,8 +10,7 @@ type CardProps = {
 }
 export const Card = ({ person, onMinusClick, onPlusClick }: CardProps) => {
   return (
-    <div
-      className={'relative flex h-96 w-full max-w-xs flex-col overflow-hidden rounded-md border'}>
+    <div className={'relative flex h-96 w-full flex-col overflow-hidden rounded-md border'}>
       <div className="relative h-full w-full">
         <Image
           fill
@@ -28,7 +27,7 @@ export const Card = ({ person, onMinusClick, onPlusClick }: CardProps) => {
           className="flex size-10 items-center justify-center rounded-md bg-slate-400 text-lg hover:bg-slate-300">
           -
         </span>
-        <Link href={['detay', person?.id || ''].join('/')}>Detay</Link>
+        <Link href={`/detail/${person?.id || ''}`}>Detail</Link>
         <span
           onClick={onPlusClick}
           className="flex size-10 items-center justify-center rounded-md bg-slate-400 text-lg hover:bg-slate-300">

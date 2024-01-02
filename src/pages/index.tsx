@@ -4,6 +4,7 @@ import { Person } from '@/types/Person'
 import { allPerson } from '@/graphql/queries'
 import { unVoteMutation, voteMutation } from '@/graphql/mutations'
 import { apiGraphqlRequest } from '@/helpers/request'
+import { voteLogger } from '../helpers/logger'
 
 type HomeProps = { data: { PersonAll: Person[] } }
 type PartialPerson = Pick<Person, 'id' | 'voteCount'>
@@ -20,6 +21,7 @@ export default function Home({ data }: HomeProps) {
       apiGraphqlRequest<{ unVotePerson: PartialPerson }>(unVoteMutation(person.id)).then(
         ({ data }) => setPersonList(updatePersonState(data.unVotePerson))
       )
+      voteLogger(person, '-')
     },
     []
   )
@@ -28,12 +30,13 @@ export default function Home({ data }: HomeProps) {
       apiGraphqlRequest<{ votePerson: PartialPerson }>(voteMutation(person.id)).then(({ data }) =>
         setPersonList(updatePersonState(data.votePerson))
       )
+      voteLogger(person, '+')
     },
     []
   )
 
   return (
-    <div className="container mx-auto px-5">
+    <div className="container mx-auto p-5">
       <div className="grid grid-cols-1 gap-5 sm:grid-cols-3 lg:grid-cols-5">
         {personList.map((person: Person, i) => (
           <Card
